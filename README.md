@@ -1,4 +1,4 @@
-LING83800: MP3
+LING83800: Homework 3
 ==============
 
 In this assignment, you will attempt to decode text for which each
@@ -14,7 +14,7 @@ you will attempt to recover the \"plaintext\":
 To do this, you will:
 
 1.  build a language model over plaintext tokens,
-2.  write a function which constructs a lattice of possible plaintext
+2.  write a function that constructs a lattice of possible plaintext
     tokens for a given scrambled sentence, and
 3.  score this lattice by composing it with the language model and
     decode it using the Viterbi algorithm.
@@ -25,7 +25,7 @@ Part 1: language model construction
 What to do
 ----------
 
-Build a English language model over tokens:
+Build an English language model over tokens:
 
 -   Download the [2007 News Crawl
     data](http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz)
@@ -55,11 +55,13 @@ Part 2: lattice construction
 What to do
 ----------
 
-Write a function which creates an unweighted \"sausage\" FSA containing
-all the possible ways to unscramble a given set of scrambled tokens. For
-instance, if the *i*th scrambled token is `tni`, then there will be arcs
-from state *i* to state *i* + 1 with labels corresponding to the word
-`nit`, `tin`, etc. For the ciphertext:
+Write a function that creates an unweighted \"sausage\" FSA containing
+all the possible ways to unscramble a given sequence of scrambled words. For
+instance, if the *i*th scrambled word is `tni`, then there will be arcs
+from state *i* to state *i* + 1 with labels corresponding to the words
+`nit`, `tin`, `nti`, etc. 
+
+For the ciphertext:
 
     si tihs ti ?
 
@@ -89,9 +91,9 @@ Hints
                 # back together.
                 yield "".join(perm_list)
 
-    However, you do not need to generate an arc for every possible
-    permutation of a scrambled word, just tokens which are in-vocabulary
-    (i.e., present in the language model). You can load the symbol table
+    Note that you can either generate an arc for every possible permutation of a scrambled word or test whether a word is in-vocabulary (i.e., present in the language model) before adding an arc for it. 
+    
+    To test if a word is in-vocabulary, you can load the symbol table
     (created by `ngramsymbols`) as follows:
 
         sym = pynini.SymbolTable.read_text("your.sym")  # Or whatever.
@@ -127,15 +129,15 @@ Part 3: decoding
 What to do
 ----------
 
-Score the test data lattices by composing it with the language model,
+Score the test data lattices by composing them with the language model,
 then decode them with the Viterbi algorithm.
 
 What to turn in
 ---------------
 
-Decode all the sentences in `test.ana` and write them out to a file
+Decode all the sentences in [test.ana] and write them out to a file
 `test.hyp`, one sentence per line with a single space between each
-token, as in `dev.tok` (in this directory). *You must provide your
+token, as in [dev.tok]. *You must provide your
 solution in this format to receive full credit.*
 
 Hints
@@ -154,6 +156,7 @@ Hints
 Stretch goals
 =============
 
+-   Compare the runtime of only adding arcs for in-vocabulary tokens to adding arcs for all tokens.
 -   Experiment with different language model settings, including:
 
     -   data sources
@@ -162,7 +165,7 @@ Stretch goals
     -   shrinking method
 
     and report which settings (if any) improve accuracy on the
-    development set (gold data `dev.tok`, anagrammed data `dev.ana`, both
+    development set (gold data [dev.tok], anagrammed data [dev.ana], both
     included in this repo).
 
 -   Implement anagram decoding using a hidden Markov model, as described
