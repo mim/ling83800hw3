@@ -43,7 +43,7 @@ Hints
 -----
 
 -   You can follow along with the [\"token model\"
-    instructions](http://wellformedness.com/courses/LING83800/opengrm-ngram-model-building.html).
+    instructions for practicum 5](http://mr-pc.org/t/ling83800/practicum5.html).
 -   Note that the command-line parts may take around an hour to run. If
     you\'re unsure if you\'re doing things right, try it with a smaller
     file (e.g., the first 1000 sentences), or try running things on the
