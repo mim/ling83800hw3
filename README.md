@@ -135,9 +135,9 @@ then decode them with the Viterbi algorithm.
 What to turn in
 ---------------
 
-Decode all the sentences in [test.ana] and write them out to a file
+Decode all the sentences in [test.ana](test.ana) and write them out to a file
 `test.hyp`, one sentence per line with a single space between each
-token, as in [dev.tok]. *You must provide your
+token, as in [dev.tok](dev.tok). *You must provide your
 solution in this format to receive full credit.*
 
 Hints
@@ -165,7 +165,7 @@ Stretch goals
     -   shrinking method
 
     and report which settings (if any) improve accuracy on the
-    development set (gold data [dev.tok], anagrammed data [dev.ana], both
+    development set (gold data [dev.tok](dev.tok), anagrammed data [dev.ana](dev.ana), both
     included in this repo).
 
 -   Implement anagram decoding using a hidden Markov model, as described
