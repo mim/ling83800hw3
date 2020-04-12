@@ -1,4 +1,4 @@
-LING83800: Homework 3
+LING83800: Homework "3" - Extra Credit
 ==============
 
 In this assignment, you will attempt to decode text for which each
